@@ -1,5 +1,8 @@
+
 # Copyright (c) 2024 Microsoft Corporation.
 # Licensed under the MIT License
+
+"""Generate a rating description for community report rating."""
 
 from graphrag.language_model.protocol.base import ChatModel
 from graphrag.prompt_tune.prompt.community_report_rating import (

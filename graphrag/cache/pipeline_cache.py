@@ -19,7 +19,8 @@ class PipelineCache(metaclass=ABCMeta):
         Args:
             key (str): The key to get the value for.
 
-        Returns:
+        Returns
+        -------
             Any: The value for the given key.
         """
 
@@ -40,7 +41,8 @@ class PipelineCache(metaclass=ABCMeta):
         Args:
             key (str): The key to check for.
 
-        Returns:
+        Returns
+        -------
             bool: True if the key exists in the cache, False otherwise.
         """
 

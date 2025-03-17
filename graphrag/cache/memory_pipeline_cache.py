@@ -25,7 +25,8 @@ class InMemoryCache(PipelineCache):
         Args:
             key (str): The key to get the value for.
 
-        Returns:
+        Returns
+        -------
             Any: The value for the given key or None if the key does not exist.
         """
         key = self._create_cache_key(key)
@@ -39,7 +40,8 @@ class InMemoryCache(PipelineCache):
             value (Any): The value to set.
             debug_data (dict | None, optional): Additional debugging information.
 
-        Returns:
+        Returns
+        -------
             None
         """
         key = self._create_cache_key(key)
@@ -51,7 +53,8 @@ class InMemoryCache(PipelineCache):
         Args:
             key (str): The key to check for.
 
-        Returns:
+        Returns
+        -------
             bool: True if the key exists in the storage, False otherwise.
         """
         key = self._create_cache_key(key)
@@ -63,7 +66,8 @@ class InMemoryCache(PipelineCache):
         Args:
             key (str): The key to delete.
 
-        Returns:
+        Returns
+        -------
             None
         """
         key = self._create_cache_key(key)
@@ -72,7 +76,8 @@ class InMemoryCache(PipelineCache):
     async def clear(self) -> None:
         """Clear the storage.
 
-        Returns:
+        Returns
+        -------
             None
         """
         self._cache.clear()
@@ -83,7 +88,8 @@ class InMemoryCache(PipelineCache):
         Args:
             name (str): The name of the sub cache.
 
-        Returns:
+        Returns
+        -------
             PipelineCache: A new instance of InMemoryCache with the specified name.
         """
         return InMemoryCache(name)
@@ -94,7 +100,8 @@ class InMemoryCache(PipelineCache):
         Args:
             key (str): The base key to create a cache key for.
 
-        Returns:
+        Returns
+        -------
             str: The created cache key.
         """
         return f"{self._name}{key}"
