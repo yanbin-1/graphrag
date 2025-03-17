@@ -1,5 +1,3 @@
-"""Generate a rating description for community report rating."""
-
 # Copyright (c) 2024 Microsoft Corporation.
 # Licensed under the MIT License
 
@@ -16,9 +14,9 @@ async def generate_community_report_rating(
 
     Parameters
     ----------
-    - llm (CompletionLLM): The LLM to use for generation
+    - model (ChatModel): The LLM to use for generation
     - domain (str): The domain to generate a rating for
-    - persona (str): The persona to generate a rating for for
+    - persona (str): The persona to generate a rating for
     - docs (str | list[str]): Documents used to contextualize the rating
 
     Returns

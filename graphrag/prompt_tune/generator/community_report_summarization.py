@@ -25,6 +25,7 @@ def create_community_summarization_prompt(
     ----------
     - persona (str): The persona to use for the community summarization prompt
     - role (str): The role to use for the community summarization prompt
+    - report_rating_description (str): The description of the rating given in the report
     - language (str): The language to use for the community summarization prompt
     - output_path (Path | None): The path to write the prompt to. Default is None. If None, the prompt is not written to a file. Default is None.
 

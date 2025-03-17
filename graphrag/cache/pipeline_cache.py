@@ -17,12 +17,10 @@ class PipelineCache(metaclass=ABCMeta):
         """Get the value for the given key.
 
         Args:
-            - key - The key to get the value for.
-            - as_bytes - Whether or not to return the value as bytes.
+            key (str): The key to get the value for.
 
-        Returns
-        -------
-            - output - The value for the given key.
+        Returns:
+            Any: The value for the given key.
         """
 
     @abstractmethod
@@ -30,8 +28,9 @@ class PipelineCache(metaclass=ABCMeta):
         """Set the value for the given key.
 
         Args:
-            - key - The key to set the value for.
-            - value - The value to set.
+            key (str): The key to set the value for.
+            value (Any): The value to set.
+            debug_data (dict | None, optional): Optional debugging data.
         """
 
     @abstractmethod
@@ -39,11 +38,10 @@ class PipelineCache(metaclass=ABCMeta):
         """Return True if the given key exists in the cache.
 
         Args:
-            - key - The key to check for.
+            key (str): The key to check for.
 
-        Returns
-        -------
-            - output - True if the key exists in the cache, False otherwise.
+        Returns:
+            bool: True if the key exists in the cache, False otherwise.
         """
 
     @abstractmethod
@@ -51,7 +49,7 @@ class PipelineCache(metaclass=ABCMeta):
         """Delete the given key from the cache.
 
         Args:
-            - key - The key to delete.
+            key (str): The key to delete.
         """
 
     @abstractmethod
@@ -63,5 +61,5 @@ class PipelineCache(metaclass=ABCMeta):
         """Create a child cache with the given name.
 
         Args:
-            - name - The name to create the sub cache with.
+            name (str): The name to create the sub cache with.
         """

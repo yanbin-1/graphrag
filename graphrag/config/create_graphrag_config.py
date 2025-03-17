@@ -21,10 +21,6 @@ def create_graphrag_config(
         Dictionary of configuration values to pass into pydantic model.
     root_dir : str | None
         Root directory for the project.
-    skip_validation : bool
-        Skip pydantic model validation of the configuration.
-        This is useful for testing and mocking purposes but
-        should not be used in the core code or API.
 
     Returns
     -------

@@ -17,19 +17,22 @@ def _update_and_merge_communities(
 ) -> tuple[pd.DataFrame, dict]:
     """Update and merge communities.
 
+    This function updates the existing communities dataframe with new data from a delta dataframe
+    and merges them. Community IDs are incremented to ensure uniqueness.
+
     Parameters
     ----------
     old_communities : pd.DataFrame
         The old communities.
     delta_communities : pd.DataFrame
         The delta communities.
-    community_id_mapping : dict
-        The community id mapping.
 
     Returns
     -------
     pd.DataFrame
-        The updated communities.
+        The updated communities dataframe.
+    dict
+        Mapping of old community IDs to new IDs.
     """
     # Check if size and period columns exist in the old_communities. If not, add them
     if "size" not in old_communities.columns:
@@ -93,6 +96,9 @@ def _update_and_merge_community_reports(
 ) -> pd.DataFrame:
     """Update and merge community reports.
 
+    This function updates the existing community reports dataframe with new data from a delta
+    dataframe and merges them. Community IDs are updated based on a provided mapping.
+
     Parameters
     ----------
     old_community_reports : pd.DataFrame
@@ -100,12 +106,12 @@ def _update_and_merge_community_reports(
     delta_community_reports : pd.DataFrame
         The delta community reports.
     community_id_mapping : dict
-        The community id mapping.
+        Mapping of old community IDs to new IDs.
 
     Returns
     -------
     pd.DataFrame
-        The updated community reports.
+        The updated community reports dataframe.
     """
     # Check if size and period columns exist in the old_community_reports. If not, add them
     if "size" not in old_community_reports.columns:

@@ -34,19 +34,20 @@ def create_extract_graph_prompt(
 
     Parameters
     ----------
-    - entity_types (str | list[str]): The entity types to extract
+    - entity_types (str | list[str] | None): The entity types to extract
     - docs (list[str]): The list of documents to extract entities from
     - examples (list[str]): The list of examples to use for entity extraction
     - language (str): The language of the inputs and outputs
     - encoding_model (str): The name of the model to use for token counting
     - max_token_count (int): The maximum number of tokens to use for the prompt
     - json_mode (bool): Whether to use JSON mode for the prompt. Default is False
-    - output_path (Path | None): The path to write the prompt to. Default is None.
-        - min_examples_required (int): The minimum number of examples required. Default is 2.
+    - output_path (Path | None): The path to write the prompt to. Default is None
+    - min_examples_required (int): The minimum number of examples required. Default is 2
 
     Returns
     -------
-    - str: The entity extraction prompt
+    str
+        The entity extraction prompt
     """
     prompt = (
         (GRAPH_EXTRACTION_JSON_PROMPT if json_mode else GRAPH_EXTRACTION_PROMPT)

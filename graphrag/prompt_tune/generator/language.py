@@ -12,8 +12,8 @@ async def detect_language(model: ChatModel, docs: str | list[str]) -> str:
 
     Parameters
     ----------
-    - llm (CompletionLLM): The LLM to use for generation
-    - docs (str | list[str]): The docs to detect language from
+    - model (ChatModel): The model to use for generation
+    - docs (str | list[str]): The input text(s) to detect language from
 
     Returns
     -------

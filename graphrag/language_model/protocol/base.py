@@ -27,12 +27,12 @@ class EmbeddingModel(Protocol):
         Generate an embedding vector for the given list of strings.
 
         Args:
-            text: The text to generate an embedding for.
+            text_list: The list of texts to generate embeddings for.
             **kwargs: Additional keyword arguments (e.g., model parameters).
 
         Returns
         -------
-            A collections of list of floats representing the embedding vector for each item in the batch.
+            A collection of list of floats representing the embedding vector for each item in the batch.
         """
         ...
 
@@ -55,12 +55,12 @@ class EmbeddingModel(Protocol):
         Generate an embedding vector for the given list of strings.
 
         Args:
-            text: The text to generate an embedding for.
+            text_list: The list of texts to generate embeddings for.
             **kwargs: Additional keyword arguments (e.g., model parameters).
 
         Returns
         -------
-            A collections of list of floats representing the embedding vector for each item in the batch.
+            A collection of list of floats representing the embedding vector for each item in the batch.
         """
         ...
 
@@ -91,7 +91,7 @@ class ChatModel(Protocol):
         self, prompt: str, history: list | None = None, **kwargs: Any
     ) -> ModelResponse:
         """
-        Generate a response for the given text.
+        Generate a response for the given prompt.
 
         Args:
             prompt: The text to generate a response for.
@@ -101,7 +101,6 @@ class ChatModel(Protocol):
         Returns
         -------
             A string representing the response.
-
         """
         ...
 
@@ -109,7 +108,7 @@ class ChatModel(Protocol):
         self, prompt: str, history: list | None = None, **kwargs: Any
     ) -> AsyncGenerator[str, None]:
         """
-        Generate a response for the given text using a streaming interface.
+        Generate a response for the given prompt using a streaming interface.
 
         Args:
             prompt: The text to generate a response for.
@@ -127,7 +126,7 @@ class ChatModel(Protocol):
         self, prompt: str, history: list | None = None, **kwargs: Any
     ) -> ModelResponse:
         """
-        Generate a response for the given text.
+        Generate a response for the given prompt.
 
         Args:
             prompt: The text to generate a response for.
@@ -137,7 +136,6 @@ class ChatModel(Protocol):
         Returns
         -------
             A string representing the response.
-
         """
         ...
 
@@ -145,7 +143,7 @@ class ChatModel(Protocol):
         self, prompt: str, history: list | None = None, **kwargs: Any
     ) -> Generator[str, None]:
         """
-        Generate a response for the given text using a streaming interface.
+        Generate a response for the given prompt using a streaming interface.
 
         Args:
             prompt: The text to generate a response for.

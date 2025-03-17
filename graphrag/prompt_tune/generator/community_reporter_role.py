@@ -16,14 +16,14 @@ async def generate_community_reporter_role(
 
     Parameters
     ----------
-    - llm (CompletionLLM): The LLM to use for generation
-    - domain (str): The domain to generate a persona for
-    - persona (str): The persona to generate a role for
-    - docs (str | list[str]): The domain to generate a persona for
+    model (ChatModel): The ChatModel to use for generation
+    domain (str): The domain to generate a persona for
+    persona (str): The persona to generate a role for
+    docs (str | list[str]): The documents or text used for generating the persona
 
     Returns
     -------
-    - str: The generated domain prompt response.
+    str: A string representing the generated domain prompt response.
     """
     docs_str = " ".join(docs) if isinstance(docs, list) else docs
     domain_prompt = GENERATE_COMMUNITY_REPORTER_ROLE_PROMPT.format(

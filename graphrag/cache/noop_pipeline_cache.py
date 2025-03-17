@@ -15,12 +15,11 @@ class NoopPipelineCache(PipelineCache):
         """Get the value for the given key.
 
         Args:
-            - key - The key to get the value for.
-            - as_bytes - Whether or not to return the value as bytes.
+            key: The key to get the value for.
 
         Returns
         -------
-            - output - The value for the given key.
+            The value for the given key.
         """
         return None
 
@@ -30,19 +29,20 @@ class NoopPipelineCache(PipelineCache):
         """Set the value for the given key.
 
         Args:
-            - key - The key to set the value for.
-            - value - The value to set.
+            key: The key to set the value for.
+            value: The value to set.
+            debug_data: Optional debug data to be associated with the value.
         """
 
     async def has(self, key: str) -> bool:
         """Return True if the given key exists in the cache.
 
         Args:
-            - key - The key to check for.
+            key: The key to check for.
 
         Returns
         -------
-            - output - True if the key exists in the cache, False otherwise.
+            True if the key exists in the cache, False otherwise.
         """
         return False
 
@@ -50,7 +50,7 @@ class NoopPipelineCache(PipelineCache):
         """Delete the given key from the cache.
 
         Args:
-            - key - The key to delete.
+            key: The key to delete.
         """
 
     async def clear(self) -> None:
@@ -60,6 +60,10 @@ class NoopPipelineCache(PipelineCache):
         """Create a child cache with the given name.
 
         Args:
-            - name - The name to create the sub cache with.
+            name: The name to create the sub cache with.
+
+        Returns
+        -------
+            A child instance of the PipelineCache.
         """
         return self

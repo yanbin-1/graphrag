@@ -42,10 +42,10 @@ def enable_logging_with_config(
     ----------
     config : GraphRagConfig
         The configuration.
-    timestamp_value : str
-        The timestamp value representing the directory to place the log files.
     verbose : bool, default=False
         Whether to log debug messages.
+    filename : str, default="indexing-engine.log"
+        The name of the log file.
 
     Returns
     -------

@@ -15,9 +15,14 @@ async def generate_persona(
 
     Parameters
     ----------
-    - llm (CompletionLLM): The LLM to use for generation
-    - domain (str): The domain to generate a persona for
-    - task (str): The task to generate a persona for. Default is DEFAULT_TASK
+    - model (ChatModel): The ChatModel instance to use for generation.
+    - domain (str): The domain to generate a persona for.
+    - task (str): The task to generate a persona for. Default is DEFAULT_TASK.
+
+    Returns
+    -------
+    str
+        The generated persona as a string.
     """
     formatted_task = task.format(domain=domain)
     persona_prompt = GENERATE_PERSONA_PROMPT.format(sample_task=formatted_task)

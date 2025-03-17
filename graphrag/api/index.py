@@ -39,19 +39,21 @@ async def build_index(
     ----------
     config : GraphRagConfig
         The configuration.
-    method : IndexingMethod default=IndexingMethod.Standard
-        Styling of indexing to perform (full LLM, NLP + LLM, etc.).
-    memory_profile : bool
-        Whether to enable memory profiling.
-    callbacks : list[WorkflowCallbacks] | None default=None
-        A list of callbacks to register.
-    progress_logger : ProgressLogger | None default=None
-        The progress logger.
+    method : IndexingMethod, optional
+        Styling of indexing to perform (full LLM, NLP + LLM, etc.). Default is IndexingMethod.Standard.
+    is_update_run : bool, optional
+        Flag to indicate if this is an update run. Default is False.
+    memory_profile : bool, optional
+        Whether to enable memory profiling. Default is False.
+    callbacks : list[WorkflowCallbacks], optional
+        A list of callbacks to register. Default is None.
+    progress_logger : ProgressLogger, optional
+        The progress logger. Default is None.
 
     Returns
     -------
     list[PipelineRunResult]
-        The list of pipeline run results
+        The list of pipeline run results.
     """
     logger = progress_logger or NullProgressLogger()
     # create a pipeline reporter and add to any additional callbacks
@@ -88,5 +90,15 @@ async def build_index(
 
 
 def register_workflow_function(name: str, workflow: WorkflowFunction):
-    """Register a custom workflow function. You can then include the name in the settings.yaml workflows list."""
+    """Register a custom workflow function.
+
+    Parameters
+    ----------
+    name : str
+        The name to register the workflow function under.
+    workflow : WorkflowFunction
+        The workflow function to register.
+
+    You can then include the name in the settings.yaml workflows list.
+    """
     PipelineFactory.register(name, workflow)
