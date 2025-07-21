@@ -3,15 +3,13 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Indexer",
+			"name": "Direct GraphRAG Index",
 			"type": "debugpy",
 			"request": "launch",
-			"module": "poetry",
-			"args": [
-				"poe", "index",
-				"--root", "<path_to_ragtest_root_demo>"
-			],
-		},
+			"module": "graphrag",
+			"args": ["index", "--root", "./rag"],
+			"console": "integratedTerminal"
+		  },
 		{
 			"name": "Query",
 			"type": "debugpy",
